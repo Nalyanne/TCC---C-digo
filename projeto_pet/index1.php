@@ -1,3 +1,6 @@
+<?php session_start();
+$nome = $_SESSION['user'];
+?>
 <html >
 <title>Petshop</title>
 <head>
@@ -5,20 +8,21 @@
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 <head>
 <body>
-<?PHP include 'conexao.php' ?>
+<?PHP require 'configs/conexao.php' ?>
 <div id="tudo">
 <div id="topo">
 <P>
-<!-- --><?php $userlogado = session_start(); ?><!-- -->
+<!-- --><!-- -->
  tem um código aqui que retorna o usuário logado <BR>
-<p><?php 
+<p><?php
+
 date_default_timezone_set('America/Sao_Paulo');
-$data = date ('d/m/Y');
-$hora = date ('H:i:s');
-echo "$data, $hora";
+$dataHora = date ('d/m/Y H:i:s');
+echo $dataHora;
 
 ?>
- <p><input type="submit" value="Sair" />
+<form method="Post" action="index.php" />
+<p><input type="submit" value="Sair" />
 <div id="foto">
 <img src="imagens/foto3.jpg"  />
 </div>
