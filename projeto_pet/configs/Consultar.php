@@ -11,6 +11,11 @@
  *
  * @author Nalyanne
  */
+include 'conexao.php';
+include 'login.php';
+start_session();
 class Consultar {
-    //put your code here
+    
+
+
 }

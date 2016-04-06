@@ -11,6 +11,16 @@
  *
  * @author Nalyanne
  */
+
+require_once 'conexao.php';
 class Incluir {
-    //put your code here
+   public $resultado;
+   public $query;
+   
+   public function getAllTopics (){
+       $query = $this->conection->prepare("SELEC * FROM topics");
+       $query->execute();
+       return $query;
+       
+   }
 }

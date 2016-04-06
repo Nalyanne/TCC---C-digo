@@ -2,32 +2,32 @@
 $nome = $_SESSION['user'];
 ?>
 
-<html >
-<title>Petshop</title>
+<html>
+  <title>Petshop</title>
 <head>
 <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 <head>
 <body>
+<?PHP require 'configs/conexao.php' ;
     
-<?PHP require 'configs/conexao.php' ?>
-    
+?>
 <div id="tudo">
 <div id="topo">
 <P>
 <!-- --><!-- -->
  tem um código aqui que retorna o usuário logado <BR>
-<p>
-    <?php
+<p><?php
+
 date_default_timezone_set('America/Sao_Paulo');
 $dataHora = date ('d/m/Y H:i:s');
 echo $dataHora;
+
 ?>
-    
 <form method="Post" action="index.php" />
 <p><input type="submit" value="Sair" />
 <div id="foto">
-<a href="index1.php"><img src="imagens/foto3.jpg"  /></a>
+    <a href="index1.php"><img src="imagens/foto3.jpg"  /></a>
 </div>
 </div>
 <div id="menu">
@@ -42,11 +42,31 @@ echo $dataHora;
   </table>
 </div>
 <div id="corpo">
-<p>no no no no </p>
-<?php
+<p> Aqui vem informações dos usuarios, caixa de texto que são preenchidas automaticamente.</p>
 
+<table>
+   
+    
+    <p> <td> <input type="button" value="Incluir" /> </td>
+        <td> <input type="button" value="Consultar" /> </td>
+        <td> <input type="button" value="Alterar" /> </td>
+        <td> <input type="button" value="Delete" /> </td>
+    </p>
+    
+</table>
+
+<hr color="gray" height="50%" align="center" />
+<?php    
+$consulta = $pdo->query("SELECT login FROM tb_usuario;");
+
+while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+    // aqui eu mostro os valores de minha consulta
+    echo "Nome: {$linha['login']}<br />";
+}
 ?>
+
 </div>
 </div>
 </body>
+ 
 </html>

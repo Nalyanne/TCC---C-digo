@@ -13,6 +13,7 @@
  */
 class conexao {
     public static $conexao;
+          
 
     public function __construct() {
         
