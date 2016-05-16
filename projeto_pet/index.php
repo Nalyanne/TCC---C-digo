@@ -13,8 +13,9 @@
 	
 		Login:<input type="text" name="login" /><br>
 		Senha:<input type="password" name="senha" /><br>
-		<p><input type="submit" value="Logar" />
-		<a href="#" Esqueceu sua senha? />
+                <p><input type="submit" value="Logar" /><br>
+                        
+                    <a href="#"> Esqueceu sua senha? </a>
 		
 	</form>
 	</div>

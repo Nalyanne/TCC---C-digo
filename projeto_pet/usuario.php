@@ -1,12 +1,13 @@
 <?php session_start();
 $nome = $_SESSION['user'];
 ?>
-
 <html>
   <title>Petshop</title>
 <head>
 <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="estilo.css" />
+<!--><script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+<script type="text/javascript" src="js/script.js"></script><-->
 <head>
 <body>
 <?PHP require 'configs/conexao.php' ;
@@ -31,7 +32,7 @@ echo $dataHora;
 </div>
 </div>
 <div id="menu">
-<table width="100%" height="52" border="0" align="center" cellpadding="1" cellspacing="1">
+  <table width="100%" height="52" border="0" align="center" cellpadding="1" cellspacing="1">
     <tr>
       <td><p><a href="#">Clientes</a></p></td>
       <td><a href="#">Animais</a></td>
@@ -41,29 +42,19 @@ echo $dataHora;
     </tr>
   </table>
 </div>
+</div>
 <div id="corpo">
-<p> Aqui vem informações dos usuarios, caixa de texto que são preenchidas automaticamente.</p>
 
-<table>
-   
-    
-    <p> <td> <input type="button" value="Incluir" /> </td>
-        <td> <input type="button" value="Consultar" /> </td>
-        <td> <input type="button" value="Alterar" /> </td>
-        <td> <input type="button" value="Delete" /> </td>
-    </p>
-    
-</table>
+<div id="crud">
+    <a href="incluir_user.php" class="but">Cadastrar</a><br />
+    <a href="alterar_user.php" class="but">Pesquisar</a><br />
+    <a href="#" class="but">Alterar</a><br />
+    <a href="excluir_user.php" class="but">Deletar</a><br />
+</div>
 
-<hr color="gray" height="50%" align="center" />
-<?php    
-$consulta = $pdo->query("SELECT login FROM tb_usuario;");
-
-while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-    // aqui eu mostro os valores de minha consulta
-    echo "Nome: {$linha['login']}<br />";
-}
-?>
+<?php ?>
+<div id="conteudo">
+    <p> Aqui vem informações dos usuarios, caixa de texto que são preenchidas automaticamente.</p>
 
 </div>
 </div>

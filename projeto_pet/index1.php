@@ -10,7 +10,7 @@ $nome = $_SESSION['user'];
 <head>
 <body>
     
-<?PHP require 'configs/conexao.php' ?>
+<?PHP require 'configs/conexao.php'; ?>
     
 <div id="tudo">
 <div id="topo">
@@ -31,7 +31,7 @@ echo $dataHora;
 </div>
 </div>
 <div id="menu">
-<table width="100%" height="52" border="0" align="center" cellpadding="1" cellspacing="1">
+ <table width="100%" height="52" border="0" align="center" cellpadding="1" cellspacing="1">
     <tr>
       <td><p><a href="#">Clientes</a></p></td>
       <td><a href="#">Animais</a></td>
@@ -42,7 +42,7 @@ echo $dataHora;
   </table>
 </div>
 <div id="corpo">
-<p>no no no no </p>
+ huehueheuheu
 <?php
 
 ?>
