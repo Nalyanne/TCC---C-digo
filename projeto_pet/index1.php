@@ -16,9 +16,11 @@ $nome = $_SESSION['user'];
 <div id="topo">
 <P>
 <!-- --><!-- -->
- tem um código aqui que retorna o usuário logado <BR>
+<BR>
 <p>
     <?php
+    echo $nome['login'];
+	echo ", Bem vindo<br>";
 date_default_timezone_set('America/Sao_Paulo');
 $dataHora = date ('d/m/Y H:i:s');
 echo $dataHora;
@@ -33,19 +35,18 @@ echo $dataHora;
 <div id="menu">
  <table width="100%" height="52" border="0" align="center" cellpadding="1" cellspacing="1">
     <tr>
-      <td><p><a href="#">Clientes</a></p></td>
-      <td><a href="#">Animais</a></td>
-      <td><a href="#">Atendimentos</a></td>
-	  <td><a href="#">Agenda</a></td>
-          <td><a href="usuario.php">Usuários</a></td>
+      <td><a href="clientes.php" class="but">Clientes</a></td>
+      <td><a href="animais.php" class="but">Animais</a></td>
+      <td><a href="atendimentos.php" class="but">Atendimentos</a></td>
+	  <td><a href="agenda.php" class="but">Agenda</a></td>
+	  <td><a href="funcionarios.php" class="but">Funcionários</a></td>
+	  <td><a href="relatorios.php" class="but">Relatórios</a></td>
+      <td><a href="usuario.php" class="but">Usuários</a></td>
     </tr>
   </table>
 </div>
 <div id="corpo">
- huehueheuheu
-<?php
-
-?>
+<p>Aqui deve ser entregue informações gerais sobre o sistema, ultimo cadastro de cliente/animal, atendimentos, e funcionário/usuário.
 </div>
 </div>
 </body>
