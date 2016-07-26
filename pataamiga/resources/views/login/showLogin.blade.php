@@ -1,4 +1,4 @@
-@extends('layouts.principal')
+@extends('layouts.login')
 @section('content')
 view show login
 sdssdsds

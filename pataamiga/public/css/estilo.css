@@ -9,11 +9,11 @@ body,td,th {
 	font-family: Verdana;
 	font-size: 14px;
 	color: #1b7403;
-	text-align: center;
+	text-align: left;
 }
 	
 body {
-	background-image: url("../imagens/patinhas_fundo.jpg");
+	background-image: url("patinhas_fundo.jpg");
 	background-repeat: repeat;
 	
 	}
@@ -59,19 +59,19 @@ td{
 	top:10px;
 	width: 170px;
 	height: 170px;
-	border: solid 1px;
-	z-index: 2;
+	background: url("logo.jpg");
+	z-index: 4;
 	
 	
 }
 #menu {
-	position:absolute;
+	position: absolute;
 	left:70px;
 	top:202px;
-	/**/width:1200px;/**/
-	height:50px;
+	width:auto;
+	height: auto; /*50px*/
 	z-index:3;
-	background-image: url("../imagens/menu3.jpg");
+	background-image: url("imagens/menu3.jpg");
 	background-repeat: repeat-x;
 	color: #2BFF00;
 }
@@ -82,39 +82,50 @@ td{
 	top:252px;
 	/**/width:1200px;
 	height:660px;/**/
-	z-index:4;
+	z-index:2;
 	text-align: justify;
 	background-color: #E7FEE2;
+	display: hidden;
 }
 
 /*=== formatação do menu só com css ===*/
 /*Base do menu - no caso, menus principais.*/
-#menu .nav {  /*Nessa seção define-se a base da classe de menu*/
-	margin: 20px 0 0 300px;
+#menu .nav {  /*Nessa seção define-se a base da classe de menu */
+	
+    margin: 0px 0 0 0px;
 	padding: 0;
 	list-style-type: none;
-	border: 1px solid green;
 	float:left;
+	left: 0px;
 }
-#menu .nav li { /*Aqui se define como irá ficar o primeiro Li ou os menus principais*/
-	position: relative;
+#menu .nav li { /*Aqui se define como irá ficar o primeiro Li ou os menus principais */
+	
+   
+    position: relative;
 	float: left;
-	border-right: 1px solid green;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: white;
-	height: 28px;
-	line-height: 28px;	
+	list-style: none;
+	padding-left: 48px;
+	padding-right: 48px;
+	background-color: #AFD7A3;
+	height: 50px;
+	line-height: 50px;	
+	margin: 0px;
+	background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+    cursor: pointer;
+     
 }
 #menu .nav li a { /* Já aqui será configurado a mudança de estado do link ao passar o mouse sobre o menu li*/
-	font-family: Tahoma;
+	
+    font-family: Tahoma;
 	font-size: 13px;
-	color: #81F781;
+	color: ##1b7403;
 	text-decoration:none;
+
+
 }
 #menu .nav li ul {  /*Aqui vai a configuração para a lista não ordenada ul, com irá apresentar a lista*/
 	position:absolute;
-	top: 28px;
+	top: 50px;
 	left: -20px;
 	display: none;
 }
@@ -122,14 +133,14 @@ td{
 	display: block;
 }
 #menu .nav li ul li {
-	border: 1px solid green;
+
 	display: block;
 	width: 150px;
 	height: 25px;
 	line-height: 25px;
-}
+} 
 
-#crud{
+/#crud{
         position:absolute;
 	left:0px;
 	top: 0px;
@@ -138,7 +149,7 @@ td{
 	z-index:5;
 	text-align: center;
 	background-color: #fafcf9;
-}
+}*
 /*Aqui vai as configurações para classes de botões que pode ser usados em links a href*/
 .but {
 display:block;
@@ -181,6 +192,19 @@ border: 0px;
 background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
 cursor: pointer;
 }
+.but-incluir {
+display:block;
+background-color: #76EE00;
+color: green;
+padding: 20px 40px 20px 40px;
+text-decoration: none;
+box-sizing: border-box;
+border: 0px;
+}
+.but-incluir:hover {
+background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+cursor: pointer;
+}
 /*Aqui vai a definição da div que engloba o conetúdo das operações dos submenus*/
 #conteudo{
     position: relative;
@@ -193,12 +217,95 @@ cursor: pointer;
     
 }
 fieldset{
-	 display: block;
+    display: block;
     margin-left: 2px;
     margin-right: 2px;
-    padding-top: 0.35em;
-    padding-bottom: 0.625em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    border: 2px groove (internal value);
+    border: 0px;
+}
+
+.table{
+
+	padding: 10px;
+	margin: 10px;
+	font-family: Verdana;
+	color: #00000;
+	border-collapse: collapse;
+
+}
+
+.table tr{
+	padding: 3px;
+	display: table-row;;
+	
+}
+
+. table tr:hover{
+	background-color: #97fc92; 
+		
+}
+
+.table td{
+	padding: 5px;
+	border-bottom: 1px solid #97fc92;
+	border-top: 1px solid #97fc92;
+
+
+	
+}
+
+.table th{
+	background-color: #4CAF50;
+    color: white;
+	padding: 10px;
+	border-top: 1px solid green;
+	text-align: center;
+}
+/*Configuração de botão para ser inserido na tabela.*/
+.btn{
+	display: inline-block;
+	background-color: #5f2;
+	color: #444;
+	padding: 6px 2px;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: Verdana;
+	font-size: 12px;
+	border: 0px;
+	box-shadow: 1px 1px 1px #999;
+	border-radius: 4px;
+
+
+}
+.btn-edit{
+	display: inline-block;
+	background-color: #dfa;
+	color: #444;
+	padding: 6px 2px;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: Verdana;
+	font-size: 12px;
+	border: 0px;
+	box-shadow: 1px 1px 1px #999;
+	border-radius: 4px;	
+}
+.btn-delete{
+	display: inline-block;
+	background-color: #dad;
+	color: #444;
+	padding: 6px 2px;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: Verdana;
+	font-size: 12px;
+	border: 0px;
+	box-shadow: 1px 1px 1px #999;
+	border-radius: 4px;
+}
+
+.btn:hover .btn-edit:hover .btn-delete:hover{
+	text-decoration: none;
+	background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+	cursor: pointer;
+
 }
