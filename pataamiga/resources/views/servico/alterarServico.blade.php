@@ -7,7 +7,7 @@
         <form action="/servico/update" method="POST">
 
         {!! csrf_field() !!}
-<input type="hidden" name="cod_servico" value="{{$servico['cod_sesrvico']}}" />
+<input type="hidden" name="cod_servico" value="{{$servico['cod_servico']}}" />
 
 
             <p><h3>Alterar dados do Serviço</h3><br>
@@ -18,7 +18,7 @@
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
-            </div>
+            </div> 
         @endif
 
 

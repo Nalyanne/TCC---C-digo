@@ -48,8 +48,8 @@
     <p><label>Pedigree:</label><input type="text" name="pedigree" /><br>
 
     <p><label>Sexo:</label><select name='sexo'>
-        <option value="f">Femea</option>
-        <option value="m">Macho</option>
+        <option value="Femea">Femea</option>
+        <option value="Macho">Macho</option>
         </select> <br>
 
     <p><label>Cor:</label><select name="cod_cor">

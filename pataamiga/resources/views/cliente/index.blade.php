@@ -32,7 +32,7 @@
 			<td>{{$cliente['nome']}}</td>
 			<td>{{$cliente['telefone']}}</td>
 			<td>{{$cliente['email']}}</td>
-			<td> - </td>
+			<td> <a href="/animais/cliente/{{$cliente['cod_cliente']}}">Ver</a> </td>
 			<td>
 				
 				<button class='btn-edit' ><a href="/cliente/alterar/{{$cliente['cod_cliente']}}">Editar</a></button>

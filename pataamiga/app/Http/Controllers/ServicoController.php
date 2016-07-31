@@ -37,20 +37,27 @@ class ServicoController extends Controller
     	return view ('servico.alterarServico',['servico'=>$servico]);
     }
 
-public function update(Request $request){
-    $DadosUpload= $request->all();
-    $cod_servico=$DadosUpload['cod_servico'];
-    #dd($DadosUpload);
-    //depois adicionar validador
-    unset($DadosUpload['_token']);
-    unset($DadosUpload['cod_servico']);
-    Servico::where('cod_servico',$cod_servico)->update($DadosUpload);
-    return redirect('servicos');
+    public function update(Request $request){
+        $DadosUpload= $request->all();
+        $cod_servico=$DadosUpload['cod_servico'];
+        
+        //depois adicionar validador
+        unset($DadosUpload['_token']);
+        unset($DadosUpload['cod_servico']);
 
-}
+        Servico::where('cod_servico',$cod_servico)->update($DadosUpload);
+        return redirect('servicos');
+
+    }
 
     public function deletar($id){
         Servico::destroy($id);
     	return redirect ('servicos');
+    }
+
+    public function detalhesServico($idServico){
+        $servico = Servico::find($idServico);
+
+        return $servico;
     }
 }

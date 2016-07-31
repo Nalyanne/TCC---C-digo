@@ -29,7 +29,7 @@
          </fieldset>
          
          <fieldset>
-         <p><label>Telefone(s):</label><input type="text" name="telefone" /> <input type="checkbox" name="whatsapp">Whatsapp</input> <br>
+         <p><label>Telefone(s):</label><input type="text" name="telefone" /> 
          <p><label>Email:</label><input type="text" name="email" />
          </fieldset>
          
@@ -39,6 +39,7 @@
              <p><label>Endereço:</label><input type="text" name="endereco" /><br>
         
              <p><label>Complemento:</label><input type="text" name="complemento" /> <br>
+             
              <p><button class="but-incluir"><a href="/animal/novo">Animais</a></button><br>
          </fieldset>
              

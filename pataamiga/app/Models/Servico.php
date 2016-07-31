@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\hasMany;
 use App\Models\Atendimento;
 
 class Servico extends Model
@@ -25,9 +26,14 @@ class Servico extends Model
 		'validade'	
 	];
 
-	public function atendimento() {
+	public function atendimentos() {
 
-		return $this->BelongsTo(Atendimento::class, 'cod_atendimento'); 
+		return $this->hasMany(Atendimento::class, 'cod_atendimento'); 
 	}
+
+	public function getValidadeBrAttribute(){
+        $date = new \DateTime($this->attributes['validade']);
+        return $date->format('d/m/Y');
+    }
 
 }

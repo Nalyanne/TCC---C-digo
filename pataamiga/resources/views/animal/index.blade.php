@@ -15,6 +15,7 @@ Para cadastrar um novo animal: <button class="btn"><a href='/animal/novo'>Novo</
 <table class='table'>
 	<thead>
 		<tr>
+			<th>ID</th>
 			<th>Dono</th>
 			<th>Animal</th>
 			<th>Raça</th>
@@ -28,6 +29,7 @@ Para cadastrar um novo animal: <button class="btn"><a href='/animal/novo'>Novo</
 	@foreach($animais as $animal)
 	
 		<tr>
+		<td>{{$animal['cod_animal']}}</td>
 			<td> {{$animal['cliente']['nome']}}</td>
 			<td> {{$animal['nome']}}</td>
 			<td> {{$animal['raca']['raca']}}</td> <!-- o primeiro indice eh o objeto da relacao, o segundo o atributo do objeto -->

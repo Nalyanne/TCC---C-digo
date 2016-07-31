@@ -10,14 +10,17 @@ use App\Models\Status_Atendimento;
 use App\Models\Cliente;
 use App\Models\Animal;
 use App\Models\Servico;
+use App\Models\Atualizacao;
+use App\Models\Funcionario;
 
 class AtendimentoController extends Controller
 {
      public function index(){
-        $ListarTodos = Atendimento::get();
+        $ListarTodos = Atendimento::where('cod_status_atend', '!=', 4)->where('cod_status_atend', '!=', 6)->get();
+        $finalizados = Atendimento::where('cod_status_atend', 4)->where('cod_status_atend', '!=', 6)->get();
         
 
-    	return view('atendimento.index',['atendimentos'=> $ListarTodos]);
+    	return view('atendimento.index',['atendimentos'=> $ListarTodos, 'atendimentosFinalizados' => $finalizados]);
     }
 
 
@@ -30,6 +33,7 @@ class AtendimentoController extends Controller
         $a = Atendimento::orderBy('cod_atendimento', 'desc')->get();
         $novoCod = $a[0]->cod_atendimento;
         $novoCod++;
+
 
     	return view ('atendimento.novoAtendimento',['cliente'=>$cliente, 'animal'=>$animal, 'servico'=>$servico,'status'=>$status, 'atend'=>$novoCod]);
 
@@ -45,44 +49,58 @@ class AtendimentoController extends Controller
 
     }
 
-     public function atualizar ($id){
-        $Comentario=Atendimento::find($id);
-        $servico=Servico::all();
+     public function atualizar($id){
 
-     	return view ('atendimento.atualizarAtendimento',['att' =>$Comentario, 'servicos'=>$servico]);
+            $atendimento =Atendimento::with(['cliente', 'animal', 'servico', 'atualizacoes'])->find($id);
+           
+         	return view ('atendimento.atualizarAtendimento',['att' =>$atendimento]);
      }
 
      public function adicionar(Request $request){   //esse metodo serve para salvar as alterações feitas em "atualizar"
-         $adicionar = $request->all();
-         $cod_atendimento=$request['cod_atendimento'];
-         unset($adicionar['_token']);
-         unset($adicionar['cod_atendimento']);
+             $adicionar = $request->all();
+             unset($adicionar['_token']);
+             $adicionar['cod_usuario'] = 10;
+             $adicionar['data_hora'] = date("Y-m-d H:i:s");
+             
+             $data['cod_status_atend'] = 2;
+             Atendimento::where('cod_atendimento',$adicionar['cod_atendimento'])->update($data);
 
-        Atendimento::where('cod_atendimento', $cod_atendimento)->update($adicionar);
-         return redirect('/atendimentos');
-          }
+             Atualizacao::create($adicionar);
+             return redirect('/atendimentos');
+    }
 
      public function alterar ($id){
-        $alterar=Atendimento::find($id);
-        $servico=Servico::all();
+            $alterar=Atendimento::with(['cliente', 'animal', 'servico'])->find($id);
+            $servico=Servico::all();
+            $Funcionario = Funcionario::all();
 
-     	return view ('atendimento.alterarAtendimento',['alterar' =>$alterar, 'servico'=>$servico]);
+
+         	return view ('atendimento.alterarAtendimento',['alterar' =>$alterar, 'servico'=>$servico, 'funcionario' => $Funcionario]);
      }
 
-public function update(Request $request){
+    public function update(Request $request){
 
-        $Upar=$request->all();
-        $cod_atendimento = $request['cod_atendimento'];
-        unset($Upar['_token']);
-        unset($Upar['cod_atendimento']);
+            $Upar=$request->all();
+            $cod_atendimento = $request['cod_atendimento'];
+            unset($Upar['_token']);
+            unset($Upar['cod_atendimento']);
+            $Upar['cod_status_atend'] = 2;
+          
+            Atendimento::where('cod_atendimento',$cod_atendimento)->update($Upar);
+            return redirect('/atendimentos');
+    }
 
-        Atendimento::where('cod_atendimento',$cod_atendimento)->update($Upar);
-        return redirect('/atendimentos');
-}
+    public function cancelar ($id){
 
-     public function cancelar ($id){
+            $data['cod_status_atend'] = 6;
+            Atendimento::where('cod_atendimento',$id)->update($data);
+    	    return redirect('/atendimentos');
+    }
 
-        Atendimento::destroy($id);
-     	return redirect('/atendimentos');
-     }
+    public function finalizar($id){
+
+            $data['cod_status_atend'] = 4;
+            Atendimento::where('cod_atendimento',$id)->update($data);
+            return redirect('/atendimentos');
+    }
 }

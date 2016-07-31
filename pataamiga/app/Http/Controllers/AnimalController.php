@@ -11,6 +11,7 @@ use App\Models\Raca;
 use App\Models\Especie;
 use App\Models\Porte;
 use App\Models\Cor;
+use App\Models\Atualizacao;
 
 class AnimalController extends Controller
 {
@@ -58,9 +59,13 @@ class AnimalController extends Controller
     public function alterar($id){
         $cliente = Cliente::all();
         $animals = Animal::find($id);
-        
+        $especie = Especie::all();
+        $racas = Raca::all();
+        $porte = Porte::all();
+        $cor = Cor::all();
+
         #dd($animals);
-    	return view ('animal.alterarAnimal', ['animals' => $animals ,'clientesok'=>$cliente]);
+    	return view ('animal.alterarAnimal', ['animals' => $animals ,'clientesok'=>$cliente,'especies'=> $especie, 'racas'=>$racas, 'portes'=>$porte, 'cores'=>$cor]);
     }
 
     public function update(Request $request){
@@ -76,5 +81,18 @@ class AnimalController extends Controller
 
     }
 
+    public function animaisByCiente($idCliente){
+        $animais = Animal::where('cod_cliente', $idCliente)->where('situacao','!=', 'falecido')->get();
+        return $animais;
+    }
 
+    
+    public function animaisCliente($idCliente){
+
+
+        $Listar= Animal::with('cliente')->where('cod_cliente', $idCliente)->get();
+       
+
+        return view('animal.index',['animais'=>$Listar]);
+    } 
 }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\hasMany;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -30,31 +31,46 @@ class Atendimento extends Model
 		'hora_servico',
 		'data_servico',
 		'observacao',
-		'atualizacao',
+		'cod_atualizacao',
+		'valor',
+		'tb_atendimento_ibfk_7'
 		
 	];
 
-public function servico() {
+	public function status() {
 
-    		return $this->hasMany('App\Models\Status_Atendimento');
+    		return $this->BelongsTo('App\Models\Status_Atendimento', 'cod_status_atend');
     }
 
 
 
-public function animais() {
+	public function animal() {
 
-    		return $this->hasMany('App\Models\Animal');
+    		return $this->BelongsTo('App\Models\Animal', 'cod_animal');
     }
 
 
-public function cliente() {
+	public function cliente() {
 
-    		return $this->hasMany('App\Models\Cliente');
+    		return $this->BelongsTo('App\Models\Cliente', 'cod_cliente');
     }
 
 
-public function funcionario() {
+	public function funcionario() {
 
-    		return $this->hasMany('App\Models\Funcionario');
+    		return $this->BelongsTo('App\Models\Funcionario', 'cod_funcionario');
+    }
+
+	public function servico(){
+			return $this->BelongsTo('App\Models\Servico', 'cod_servico');
+	}
+
+	public function atualizacoes(){
+		return $this->hasMany('App\Models\Atualizacao','cod_atendimento');
+	}
+
+	public function getDataServicoBrAttribute(){
+        $date = new \DateTime($this->attributes['data_servico']);
+        return $date->format('d/m/Y');
     }
 }

@@ -147,8 +147,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-       
 
+       
         /*
          * Application Service Providers...
          */
@@ -158,7 +158,7 @@ return [
         App\Providers\RouteServiceProvider::class,
          Way\Generators\GeneratorsServiceProvider::class,
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
-
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
     ],
 
     /*

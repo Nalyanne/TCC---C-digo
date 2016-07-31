@@ -41,7 +41,7 @@
          </fieldset>
          
          <fieldset>
-         <p><label>Telefone(s):</label><input type="text" name="telefone" value="{{$cliente['telefone']}}" /> <input type="checkbox" name="whatsapp" ">Whatsapp</input> <br>
+         <p><label>Telefone(s):</label><input type="text" name="telefone" value="{{$cliente['telefone']}}" />
          <p><label>Email:</label><input type="text" name="email" value="{{$cliente['email']}}"/>
          </fieldset>
          

@@ -25,15 +25,10 @@
         @endif
 
     <fieldset>
-    <p> Cliente: {{$att['cod_cliente']}}<br>
-<p>Animal: {{$att['cod_animal']}} <br>
+    <p> Cliente: {{$att['cliente']['nome']}}<br> 
+<p>Animal: {{$att['animal']['nome']}} <br>
 
-<p>Serviço: <select name="cod_servico">
-    @foreach($servicos as $servico)
-
-    <option <?php if($att['cod_servico'] == $servico['cod_servico'] ) echo 'selected="selected"';?> value="{{$servico['cod_servico']}}" > {{$servico['servico']}}</option>
-        @endforeach
-    </select><br>
+<p>Serviço: {{$att['servico']['servico']}}<br>
     
 <br>
 <br>
@@ -42,15 +37,43 @@
     
     
 <fieldset>
+
+  
+    <table class="table">
+       
+        <thead>
+             <tr>
+                <th>Ultima Atualização</th>
+                <th>Atualizações</th>
+              
+            </tr>
+        </thead>
+        
+        <tbody>
+        @foreach($att['atualizacoes'] as $atualizacoes)
+            <tr>    
+                <td>
+                    {{$atualizacoes['data_hora_br']}}
+                </td>
+                <td>
+                    {{$atualizacoes['atualizacao']}}
+                </td>
+               
+            </tr>
+            @endforeach
+        </tbody>
+        
+    </table>
+  
     <p>Atualizações: <textarea name="atualizacao"></textarea>
 
-
+<input type="hidden" name="cod_atendimento" value="{{$att['cod_atendimento']}}" />
 </fieldset>
 
     <fieldeset>    
 <table>
     <tr><td><input type='submit' value='Salvar' class='but' /></td><td align='right'></td>
-        <td><button class="but-incluir"><a href="#">Concluír Atendimento</a></button></td>
+        <td><button class="but-incluir"><a href="/atendimento/finalizar/{{$att['cod_atendimento']}}">Concluír Atendimento</a></button></td>
 
         <td><button class="but-limpar"><a href="/atendimentos" class=>Voltar</a></button></td></tr>
 </table>

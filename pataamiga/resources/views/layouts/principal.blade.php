@@ -5,6 +5,10 @@
   <title>Petshop</title>
   <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="<?php echo asset('css/estilo.css') ;?>" />
+  
+  <script type="text/javascript" src="<?php echo asset('js/jquery-1.12.3.js') ;?>"></script>
+  <script type="text/javascript" src="<?php echo asset('js/moment.js') ;?>"></script>
+
 <head>
 
 <body>
@@ -49,13 +53,13 @@
 
            <li>
              <a href="/atendimentos">Atendimento</a>
-              <ul>
+            <!--  <ul>
                 <li><a href="/atendimento/novo">Novo</a></li>
                 <li><a href="/atendimento/atualizar">Atualizar</a></li>
                 <li><a href="/atendimento/pesquisar">Pesquisar</a></li>
                 <li><a href="/atendimento/alterar">Alterar</a></li>
                 <li><a href="/atendimento/cancelar">Cancelar</a></li>
-              </ul>
+              </ul> -->
             </li>
             <li><a href="/agenda">Agenda</a></li>
 
@@ -69,12 +73,12 @@
               </li>
 
             <li><a href="/funcionarios">Funcionários</a>
-            <ul>
+           <!-- <ul>
                 <li><a href="/funcionario/novo">Cadastrar</a></li>
                 <li><a href="/funcionario/pesquisar">Pesquisar</a></li>
                 <li><a href="/funcionario/alterar">Alterar</a></li>
                 <li><a href="/funcionario/deletar">Deletar</a></li>
-              </ul>
+              </ul>-->
               </li>
 
             <li><a href="/relatorios">Relatórios</a></li>
@@ -94,5 +98,6 @@
         @yield('content')
         <!--<p>Aqui deve ser entregue informações gerais sobre o sistema, ultimo cadastro de cliente/animal, atendimentos, e funcionário/usuário.</p>p -->
         </div>
+
 </body>
 </html>

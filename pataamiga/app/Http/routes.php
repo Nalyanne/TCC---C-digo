@@ -31,6 +31,7 @@ Route::get('/animal/pesquisar', 'AnimalController@pesquisar');
 Route::get('/animal/alterar/{id}', 'AnimalController@alterar');
 Route::post('/animal/salvar','AnimalController@salvar');
 Route::post('/animal/update','AnimalController@update');
+Route::get('/animais/cliente/{idCliente}', 'AnimalController@animaisCliente');
 
 Route::get('/atendimentos','AtendimentoController@index');
 Route::get('/atendimento/novo', 'AtendimentoController@novo');
@@ -40,6 +41,7 @@ Route::post('/atendimento/adicionar','AtendimentoController@adicionar');
 Route::get('/atendimento/alterar/{id}', 'AtendimentoController@alterar');
 Route::post('/atendimento/update','AtendimentoController@update');
 Route::get('/atendimento/cancelar/{id}', 'AtendimentoController@cancelar');
+Route::get('/atendimento/finalizar/{id}', 'AtendimentoController@finalizar');
 
 Route::get('/agenda','AgendaController@index');
 
@@ -66,4 +68,7 @@ Route::get('/usuario/pesquisar','UsuarioController@pesquisar');
 Route::get('/usuario/alterar/{id}','UsuarioController@alterar');
 Route::post('/usuario/update','UsuarioController@update');
 Route::get('/usuario/deletar/{id}','UsuarioController@deletar');
+
+Route::get('/animais-cliente/{idCliente}', 'AnimalController@animaisByCiente');
+Route::get('/servico-detalhes/{id}','ServicoController@detalhesServico');
 

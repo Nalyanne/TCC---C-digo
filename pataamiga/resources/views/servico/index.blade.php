@@ -9,7 +9,7 @@
 <hr>
 <div align="center">
 
-<h3> Serivços </h3>
+<h3> Serviços </h3>
 	<table class="table">
 		<tr>
 			<thead>
@@ -26,7 +26,7 @@
 				<td>{{$servico['servico']}}</td>
 				<td>{{$servico['preco']}}</td>
 				<td>{{$servico['duracao']}}</td>
-				<td>{{$servico['validade']}}</td>
+				<td>{{$servico['validade_br']}}</td>
 				<td><button class="btn-edit"><a href="/servico/alterar/{{$servico['cod_servico']}}">Editar</a></button>
 					<button class="btn-delete"><a href="/servico/deletar/{{$servico['cod_servico']}}">Deletar</a></button>
 				</td>
