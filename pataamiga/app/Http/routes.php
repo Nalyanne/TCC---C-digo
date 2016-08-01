@@ -60,6 +60,9 @@ Route::get('/funcionario/alterar','FuncionarioController@alterar');
 Route::get('/funcionario/deletar','FuncionarioController@deletar');
 
 Route::get('/relatorios','RelatorioController@index');
+Route::post('/relatorios/servicos','RelatorioController@servicos');
+Route::post('/relatorios/atendimentos-mes','RelatorioController@atendimentosByMes');
+Route::post('/relatorios/atendimentos-dia','RelatorioController@atendimentosByDia');
 
 Route::get('/usuarios','UsuarioController@index');
 Route::get('/usuario/novo','UsuarioController@novo');
