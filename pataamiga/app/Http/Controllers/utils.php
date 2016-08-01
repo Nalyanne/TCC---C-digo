@@ -5,7 +5,7 @@
 // Requires PHP 5.2.0 or higher.
 //--------------------------------------------------------------------------------------------------
 // PHP will fatal error if we attempt to use the DateTime class without this being set.
-date_default_timezone_set('UTC');
+date_default_timezone_set('America/Sao_Paulo');
 class Event {
 	// Tests whether the given ISO8601 string has a time-of-day or not
 	const ALL_DAY_REGEX = '/^\d{4}-\d\d-\d\d$/'; // matches strings like "2013-12-29"

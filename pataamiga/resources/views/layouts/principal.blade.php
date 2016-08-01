@@ -6,8 +6,11 @@
   <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="<?php echo asset('css/estilo.css') ;?>" />
   
-  <script type="text/javascript" src="<?php echo asset('js/jquery-1.12.3.js') ;?>"></script>
-  <script type="text/javascript" src="<?php echo asset('js/moment.js') ;?>"></script>
+  <link rel='stylesheet' href='<?php echo asset('fullcalendar/fullcalendar.css') ;?>' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+
+
+
 
 <head>
 
@@ -22,7 +25,7 @@
     <p>
            
     <form method="Post" action="#" />
-    <p><input type="submit" value="Sair">
+    
     </form>
 
         <div id="foto">
@@ -82,8 +85,8 @@
               </li>
 
             <li><a href="/relatorios">Relatórios</a></li>
-            <li><a href="/usuarios">Usuários</a>
-             <!-- <ul>
+            <li><a href="/usuarios">Usuários</a> 
+                       <!-- <ul>
                 <li><a href="/usuario/novo">Cadastrar</a></li>
                 <li><a href="/usuario/pesquisar">Pesquisar</a></li>
                 <li><a href="/usuario/alterar">Alterar</a></li>
@@ -98,6 +101,6 @@
         @yield('content')
         <!--<p>Aqui deve ser entregue informações gerais sobre o sistema, ultimo cadastro de cliente/animal, atendimentos, e funcionário/usuário.</p>p -->
         </div>
-
+@yield('scripts')
 </body>
 </html>

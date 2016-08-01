@@ -51,7 +51,7 @@
     </fieldset>
 
     <fieldset>
-        <p>Data de execução: <input type='date' name='data_servico' /> - <input type="time" name="hora_servico"<br>
+        <p>Data de execução: <input type='date' name='data_servico' /> - <input type="time" name="hora_servico"><br>
         <p>Observações: <textarea name='observacao'> </textarea>
         <p>Termmino previsto: {{$tempo=$servico['duracao']}} <br>
     </fieldset>

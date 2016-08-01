@@ -1,0 +1,305 @@
+hr {
+	color: sienna;
+	}
+	
+p {
+	margin-left: 20px;
+	}
+body,td,th {
+	font-family: Verdana;
+	font-size: 14px;
+	color: #1b7403;
+	text-align: left;
+}
+	
+body {
+	background-image: url("patinhas_fundo.jpg");
+	background-repeat: repeat;
+	
+	}
+a:link    {color:green; background-color:transparent; text-decoration:none;}
+a:visited {color:#0B3B0B; background-color:transparent; text-decoration:none;}
+a:hover   {color:#81F781; background-color:transparent; text-decoration:underline;}
+a:active  {color:#40FF00; background-color:transparent; text-decoration:underline;}
+td{
+	text-align:center;
+	
+}
+#tudo{
+	
+	width: 760px;
+	margin: 0 auto;
+	text-align:left;
+    padding: 90px 30px 30px 30px;
+}
+#login{
+	top: 350px;
+	padding: 30px 30px 30px 30px;
+	margin: 0 auto;
+	text-align: center;
+	background-color:#afd7a4 ;
+	border: 0px;
+	
+}
+#topo {
+	position:absolute;
+	left:70px;
+	top:5px;
+	width:1200px;
+	height:200px;
+	background-color:#D0E6CC;
+	text-align: right;
+        
+	
+}
+#foto{
+	position:absolute;
+	left:15px;
+	top:10px;
+	width: 170px;
+	height: 170px;
+	background: url("logo.jpg");
+	
+	
+}
+#menu {
+	position: absolute;
+	left:70px;
+	top:202px;
+	width:auto;
+	height: auto; /*50px*/
+	/*background-image: url("imagens/menu3.jpg");
+	background-repeat: repeat-x; */
+	color: #2BFF00;
+}
+
+#corpo {
+	position:absolute;
+	left:70px;
+	top:252px;
+	/**/width:1200px;
+	height: auto;/**/
+	text-align: justify;
+	background-color: #E7FEE2;
+	display: hidden;
+}
+
+/*=== formatação do menu só com css ===*/
+/*Base do menu - no caso, menus principais.*/
+#menu .nav {  /*Nessa seção define-se a base da classe de menu */
+	
+    margin: 0px 0 0 0px;
+	padding: 0;
+	list-style-type: none;
+	float:left;
+	left: 0px;
+}
+#menu .nav li { /*Aqui se define como irá ficar o primeiro Li ou os menus principais */
+	
+   
+    position: relative;
+	float: left;
+	list-style: none;
+	padding-left: 33px;
+	padding-right: 33px;
+	background-color: #AFD7A3;
+	height: 50px;
+	line-height: 50px;	
+	margin: 0px;
+	background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+    cursor: pointer;
+     
+}
+#menu .nav li a { /* Já aqui será configurado a mudança de estado do link ao passar o mouse sobre o menu li*/
+	
+    font-family: Tahoma;
+	font-size: 13px;
+	color: ##1b7403;
+	text-decoration:none;
+
+
+}
+#menu .nav li ul {  /*Aqui vai a configuração para a lista não ordenada ul, com irá apresentar a lista*/
+	position:absolute;
+	top: 50px;
+	left: -20px;
+	display: none;
+}
+#menu .nav li:hover ul, .nav li ul li:hover ul, .nav li.over ul, .nav li ul li.over ul {
+	display: block;
+}
+#menu .nav li ul li {
+
+	display: block;
+	width: 150px;
+	height: 25px;
+	line-height: 25px;
+} 
+
+/#crud{
+        position:absolute;
+	left:0px;
+	top: 0px;
+	width:150px;
+	height:650px;
+	text-align: center;
+	background-color: #fafcf9;
+}*
+/*Aqui vai as configurações para classes de botões que pode ser usados em links a href*/
+.but {
+display:block;
+background-color: #04dd04;
+color: green;
+padding: 20px 40px 20px 40px;
+text-decoration: none;
+box-sizing: border-box;
+border: 0px;
+}
+.but:hover {
+background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+cursor: pointer;
+}
+.but-alerta {
+color: #fff;
+background-color: #F28E00;
+display:block;
+color: green;
+padding: 20px 40px 20px 40px;
+text-decoration: none;
+box-sizing: border-box;
+border: 0px;
+}
+.but-alerta:hover{
+background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+cursor: pointer;
+}
+.but-limpar {
+color: #fff;
+background-color: #e5f481;
+display:block;
+color: green;
+padding: 20px 40px 20px 40px;
+text-decoration: none;
+box-sizing: border-box;
+border: 0px;
+}
+.but-limpar:hover{
+background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+cursor: pointer;
+}
+.but-incluir {
+display:block;
+background-color: #76EE00;
+color: green;
+padding: 20px 40px 20px 40px;
+text-decoration: none;
+box-sizing: border-box;
+border: 0px;
+}
+.but-incluir:hover {
+background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+cursor: pointer;
+}
+/*Aqui vai a definição da div que engloba o conetúdo das operações dos submenus*/
+#conteudo{
+    position: relative;
+    left: 150px;
+    top: 0px;
+    width: 1150px;
+    height: 600px;
+    
+    
+}
+fieldset{
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 0px;
+}
+
+.table{
+
+	padding: 10px;
+	margin: 10px;
+	font-family: Verdana;
+	color: #00000;
+	border-collapse: collapse;
+
+}
+
+.table tr{
+	padding: 3px;
+	display: table-row;;
+	
+}
+
+. table tr:hover{
+	background-color: #97fc92; 
+		
+}
+
+.table td{
+	padding: 5px;
+	border-bottom: 1px solid #97fc92;
+	border-top: 1px solid #97fc92;
+
+
+	
+}
+
+.table th{
+	background-color: #4CAF50;
+    color: white;
+	padding: 10px;
+	border-top: 1px solid green;
+	text-align: center;
+}
+/*Configuração de botão para ser inserido na tabela.*/
+.btn{
+	display: inline-block;
+	background-color: #5f2;
+	color: #444;
+	padding: 6px 2px;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: Verdana;
+	font-size: 12px;
+	border: 0px;
+	box-shadow: 1px 1px 1px #999;
+	border-radius: 4px;
+
+
+}
+.btn-edit{
+	display: inline-block;
+	background-color: #dfa;
+	color: #444;
+	padding: 6px 2px;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: Verdana;
+	font-size: 12px;
+	border: 0px;
+	box-shadow: 1px 1px 1px #999;
+	border-radius: 4px;	
+}
+.btn-delete{
+	display: inline-block;
+	background-color: #dad;
+	color: #444;
+	padding: 6px 2px;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: Verdana;
+	font-size: 12px;
+	border: 0px;
+	box-shadow: 1px 1px 1px #999;
+	border-radius: 4px;
+}
+
+.btn:hover .btn-edit:hover .btn-delete:hover{
+	text-decoration: none;
+	background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+	cursor: pointer;
+
+}

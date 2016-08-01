@@ -71,4 +71,5 @@ Route::get('/usuario/deletar/{id}','UsuarioController@deletar');
 
 Route::get('/animais-cliente/{idCliente}', 'AnimalController@animaisByCiente');
 Route::get('/servico-detalhes/{id}','ServicoController@detalhesServico');
+Route::get('/agendamentos','AgendaController@agendamentos');
 

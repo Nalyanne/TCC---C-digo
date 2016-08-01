@@ -12,6 +12,7 @@ use App\Models\Animal;
 use App\Models\Servico;
 use App\Models\Atualizacao;
 use App\Models\Funcionario;
+use Carbon\Carbon;
 
 class AtendimentoController extends Controller
 {
@@ -42,10 +43,17 @@ class AtendimentoController extends Controller
     public function salvar(Request $request){
 
         $dados=$request->all();
+
         $dados['cod_status_atend'] = 0000000001;
 
         $atendimento=Atendimento::create($dados);
-        return redirect ('atendimentos');
+
+        if(isset($dados['ajax']) && $dados['ajax'] == 1){
+                return 1;
+        }else{
+            return redirect ('atendimentos');
+        }
+        
 
     }
 
